@@ -1,5 +1,15 @@
 <h2>Popular Courses</h2>
-<button (click)="show=true">View Courses List</button>
+<!-- <button (click)="show=true">View Courses List</button>
 <div *ngIf="show">
   <app-courses-list></app-courses-list>
-</div>
+</div> -->
+
+Select  a course to View
+<select #course (change)="cl.changeCourse(course.value)" >
+  <option value="Angular">Angular</option>
+  <option value="Java">Java</option>
+  <option value="Spring">Spring</option>
+  <option value="SpringBoot">SpringBoot</option>
+</select>
+
+<app-courses-list #cl="courselist"></app-courses-list>
