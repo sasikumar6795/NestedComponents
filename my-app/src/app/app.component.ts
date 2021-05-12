@@ -8,10 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
  // show : boolean;
 
- message : string;
+//  message : string;
 
- courseReg(courseName: string)
- {
-   this.message=`Your Registration for ${courseName} is successful`;
- }
+//  courseReg(courseName: string)
+//  {
+//    this.message=`Your Registration for ${courseName} is successful`;
+//  }
+
+//===============================================================================
+
+sortOption : string ="";
+
+productList : any = [
+  {productName: 'samsung', price:370000},
+  {productName: 'Apple', price:570000},
+  {productName: 'Nokia', price:270000},
+  {productName: 'Redmi', price:170000},
+];
+
 }

@@ -1,4 +1,4 @@
-<h2>Popular Courses</h2>
+<!-- <h2>Popular Courses</h2> -->
 <!-- <button (click)="show=true">View Courses List</button>
 <div *ngIf="show">
   <app-courses-list></app-courses-list>
@@ -13,9 +13,40 @@
 </select>
 
 <app-courses-list #cl="courselist"></app-courses-list> -->
-
+<!-- ========================================================================================
 <app-courses-list (onRegister)="courseReg($event)" ></app-courses-list>
 
 <div *ngIf="message">
   {{message}}
 </div>
+
+========================================================================================== -->
+
+
+<h2>Sorting product list using custom pipes</h2>
+
+<select [(ngModel)]="sortOption">
+
+  <option value="productName">Product Name</option>
+  <option value="price">Price</option>
+
+</select>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList | sort:sortOption">
+      <td>
+        {{product.productName}}
+      </td>
+      <td>
+        {{product.price}}
+      </td>
+    </tr>
+  </tbody>
+</table>
