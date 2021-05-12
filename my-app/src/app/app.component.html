@@ -4,7 +4,7 @@
   <app-courses-list></app-courses-list>
 </div> -->
 
-Select  a course to View
+<!-- Select  a course to View
 <select #course (change)="cl.changeCourse(course.value)" >
   <option value="Angular">Angular</option>
   <option value="Java">Java</option>
@@ -12,4 +12,10 @@ Select  a course to View
   <option value="SpringBoot">SpringBoot</option>
 </select>
 
-<app-courses-list #cl="courselist"></app-courses-list>
+<app-courses-list #cl="courselist"></app-courses-list> -->
+
+<app-courses-list (onRegister)="courseReg($event)" ></app-courses-list>
+
+<div *ngIf="message">
+  {{message}}
+</div>

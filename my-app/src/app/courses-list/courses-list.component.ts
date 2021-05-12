@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit , Output} from '@angular/core';
 
 @Component({
   selector: 'app-courses-list',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesListComponent implements OnInit {
   constructor() {}
+
+  @Output() onRegister = new EventEmitter<string>();
   courses = [];
   ngOnInit(): void {
     this.courses = [
@@ -18,17 +20,23 @@ export class CoursesListComponent implements OnInit {
     ];
   }
 
-  course: any[];
+  // course: any[];
 
-  changeCourse(courseName: string)
+  // changeCourse(courseName: string)
+  // {
+  //   this.course=[];
+  //   for(let i=0;i<this.courses.length;i++)
+  //   {
+  //     if(this.courses[i].courseName===courseName)
+  //     {
+  //       this.course.push(this.courses[i]);
+  //     }
+  //   }
+  // }
+
+  register(courseName: string)
   {
-    this.course=[];
-    for(let i=0;i<this.courses.length;i++)
-    {
-      if(this.courses[i].courseName===courseName)
-      {
-        this.course.push(this.courses[i]);
-      }
-    }
+    this.onRegister.emit(courseName);
   }
+
 }

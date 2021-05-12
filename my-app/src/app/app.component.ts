@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  show : boolean;
+ // show : boolean;
+
+ message : string;
+
+ courseReg(courseName: string)
+ {
+   this.message=`Your Registration for ${courseName} is successful`;
+ }
 }
